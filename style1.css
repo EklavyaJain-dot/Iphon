@@ -1,0 +1,20 @@
+body{
+    background: linear-gradient(-45deg, #05ffc0, #fd8b09 30%, #473144);
+    animation: change 6s, ease-in-out infinite;
+}
+
+@keyframes change{
+  0%{
+      background-position: 0 50%;
+  }
+  50%{
+    background-position: 100 50%;
+}
+ 100%{
+    background-position: 0 50%;
+}
+}
+
+.Submit{
+  background-color: blueviolet;
+}

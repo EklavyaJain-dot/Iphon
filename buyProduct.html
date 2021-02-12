@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Prouduct</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+  <center><div style="background-color: aqua; width: 300; height: 400; border-radius: 40px; position: relative; top: 50px">
+    <h1>Please answer some question</h1>
+
+    <form onsubmit="return GetMessage();">
+      <br><br><br>
+<center><input id="Name" type="text" placeholder="Enter your name" autocomplete="off"></center>
+<br>
+<center><input type="email" placeholder="Enter your Email" autocomplete="off"></center>
+<br>
+<center><input id="iphoneColor" type="text" placeholder="Enter the iphone color" autocomplete="off"></center>
+<br>
+<input type="text" placeholder="Which iphone" list="Options">
+<datalist id="Options">
+ <option value="Iphone"></option>
+ <option value="Iphone 11"></option>
+ <option value="Iphone pro"></option>
+ <option value="Iphone 12"></option>
+</datalist>
+<br>
+<center><input  type="submit"></center>
+</center>
+</form>
+</div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCHEeykncKx468vG2RfL3JNr76lom_4tfk",
+    authDomain: "main-website-6be19.firebaseapp.com",
+    projectId: "main-website-6be19",
+    storageBucket: "main-website-6be19.appspot.com",
+    messagingSenderId: "807460309369",
+    appId: "1:807460309369:web:e75cbac6adae560931c7a8"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+function GetMessage(){
+
+  var yourName = document.getElementById("Name").value;
+var phoneColor = document.getElementById("iphoneColor").value;
+
+  firebase.database().ref("Messages").push().set({
+  "Name" : yourName,
+  "iphoneColor" : phoneColor
+})
+ return false; 
+
+}
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000
+  });
+</script>
+
+
+</body>
+</html>
